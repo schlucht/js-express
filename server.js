@@ -1,17 +1,18 @@
-const http = require('http')
+
 const express = require('express')
+const adminRoutes = require('./routes/admin')
+const shopRoutes = require('./routes/shop')
 
+products = []
 const app = express()
+app.use(express.urlencoded({ extended: false }))
+
+app.use(shopRoutes)
+app.use('/admin', adminRoutes)
 
 app.use((req, res, next) => {
-  console.log('Hallo Schmid Lothar')
-  next()
+  res.status(404).send('<div><h1>Page not found</h1></div>')
 })
 
-app.use((req, res, next) => {
-  console.log('Hallo und nochmals dies ist noch eine')
-  res.send(`<h1>So endlich eine Ausgabe</h1>`)
-})
-
-http.createServer(app).listen(3000)
+app.listen(3000)
 
