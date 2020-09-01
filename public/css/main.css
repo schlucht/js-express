@@ -95,15 +95,32 @@ main {
 
 .btn {
   font: inherit;
+  font-family: monospace;
   border: 1px solid #00695c;
   color: #00695c;
   background: white;
   border-radius: 3px;
   cursor: pointer;
+  padding:  .15rem 1rem;
+  margin: 0.5rem 0;
+  transition: .5s;
 }
 
 .btn:hover,
 .btn:active {
   background-color: #00695c;
+  color: white;
+}
+a.btn {
+  text-decoration: none;
+  
+}
+a.btn.delete {
+  border: solid 1px rgb(221, 74, 29);
+  color: rgb(221, 74, 29);
+}
+a.btn.delete:hover,
+a.btn.delete:active {
+  background-color: rgb(221, 74, 29);
   color: white;
 }

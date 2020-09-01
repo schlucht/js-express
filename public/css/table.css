@@ -1,0 +1,32 @@
+
+.product-table {
+  font-family: inherit;
+}
+.product-table {
+  border: solid 2px rgba(0, 0, 0, 0.356);
+  
+  border-collapse: collapse;
+}
+.product-table th {
+  border-bottom: solid 1px #ababab;
+  background-color: teal;
+  color: white;
+  font-weight: 200;
+  padding: 0.5rem;
+}
+.product-table td {
+  padding: 0rem 1rem; 
+  text-align: center;
+  border-bottom: solid 1px #ababab;
+}
+.product-table tr:nth-child(odd) {
+  background-color: rgba(0, 128, 128, .2)
+}
+.product-table img {
+  width: 80px;
+  height: 80px;
+  margin: 0.3rem;
+}
+.product-table__description {
+  font-family: 'Courier New', Courier, monospace;
+}

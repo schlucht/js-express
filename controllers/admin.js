@@ -6,25 +6,28 @@ exports.getAddProduct = (req, res, next) => {
         path: '/admin/add-product',
         productCSS: true,
         formCSS: true,
+        activeAddProduct: true
     });
 };
 
 exports.postAddProduct = (req, res, next) => {
-    const product = new Product(req.body.title);
+    const product = new Product(req.body.title, 
+            req.body.imageUrl, 
+            req.body.price, 
+            req.body.description);
     product.save();
     res.redirect('/');
 };
+exports.postDelProduct = (req, res, next) => {
+  
+}
 
 exports.getProducts = (req, res, next) => {
     Product.fetchAll((products) => {
-        res.render('shop/product-list', {
+        res.render('admin/products', {
             prods: products,
-            pageTitle: 'Shop',
-            path: '/',
-            hasProducts: products.length > 0,
-            activeShop: true,
-            productCSS: true,
-            formCSS: false,
+            pageTitle: 'Admin Product',
+            path: '/admin/products'            
         });
     });
 };

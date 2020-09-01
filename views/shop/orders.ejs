@@ -5,7 +5,12 @@
 <%- include('../includes/navigation.ejs') %>
 
     <main>
-    <h1>Cart</h1>
+    <h1>My Order</h1>
+    <ul>
+      <% for(let i of orders) {%>
+        <li><%= i.title %></li>
+      <% } %>
+    </ul>
     </main>
 
 <%- include('../includes/end.ejs') %>

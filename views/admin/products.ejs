@@ -1,0 +1,39 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+<%- include('../includes/navigation.ejs') %>
+  <main>
+  
+    <table class="product-table">
+      <tr>
+        <th>Title</th><th>Image Url</th><th>Price</th><th>Description</th><th>Edit</th>
+      </tr>
+      <tr>
+        <% for(let pro of prods) {%>
+          <td>
+              <img src="<%=pro.imageUrl%>" />
+            </td>
+          <td class="product-table__title">
+            <a href="/"><%=pro.title%></a>
+            </td>
+            
+            <td class="product-table__price">
+              <%=pro.price%>            
+            </td>
+            <td class="product-table__description">
+              <%= pro.description %>
+            </td>
+            <td class="product-button">
+              <form action="admin/edit-product" method="POST" >
+              <button type="submit" class="btn">+</button>
+              </form>
+              <a class="btn delete" href="/admin/delete-product">-</a>
+          </td>
+          </tr>
+          
+        <% } %>
+    </table>
+    
+  </main>
+<%- include('../includes/end.ejs') %>
