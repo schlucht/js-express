@@ -23,7 +23,7 @@ main {
 }
 
 .main-header__nav {
-  height: 100%;
+  height: 100%; 
   display: flex;
   align-items: center;
 }
@@ -49,6 +49,13 @@ main {
 .main-header__item a:active,
 .main-header__item a.active {
   color: #ffeb3b;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 800px;
 }
 
 .grid {
@@ -123,4 +130,13 @@ a.btn.delete:hover,
 a.btn.delete:active {
   background-color: rgb(221, 74, 29);
   color: white;
+}
+a.btn.primary {
+  border: solid 1px rgb(7, 110, 226);
+  color: rgb(7, 110, 226);
+}
+a.btn.primary:hover,
+a.btn.primary:active {
+  background-color: rgb(7, 110, 226);
+  color: white;  
 }

@@ -1,18 +1,24 @@
 
+
 .product-table {
   font-family: inherit;
-}
-.product-table {
-  border: solid 2px rgba(0, 0, 0, 0.356);
-  
   border-collapse: collapse;
+  margin-top: .5rem;
 }
 .product-table th {
-  border-bottom: solid 1px #ababab;
-  background-color: teal;
-  color: white;
+  border: solid 1px  teal;
+  border-left: none;
+  background-color: white;
+  color:  teal;
   font-weight: 200;
   padding: 0.5rem;
+}
+.product-table th:hover {  
+  background-color: teal;
+  color:  white;  
+}
+.product-table th:last-child {
+  border-right: none;
 }
 .product-table td {
   padding: 0rem 1rem; 

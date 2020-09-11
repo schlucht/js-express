@@ -3,8 +3,8 @@
 </head>
 <body>
 <%- include('../includes/navigation.ejs') %>
-  <main>
-  
+  <main class="container">
+    <div><a class="btn primary" href="/admin/edit-product/0?edit=false">New Product</a></div>
     <table class="product-table">
       <tr>
         <th>Title</th><th>Image Url</th><th>Price</th><th>Description</th><th>Edit</th>
@@ -15,7 +15,7 @@
               <img src="<%=pro.imageUrl%>" />
             </td>
           <td class="product-table__title">
-            <a href="/"><%=pro.title%></a>
+            <a href="/admin/edit-product/<%=pro.id%>?edit=true"><%=pro.title%></a>
             </td>
             
             <td class="product-table__price">
@@ -24,14 +24,10 @@
             <td class="product-table__description">
               <%= pro.description %>
             </td>
-            <td class="product-button">
-              <form action="admin/edit-product" method="POST" >
-              <button type="submit" class="btn">+</button>
-              </form>
-              <a class="btn delete" href="/admin/delete-product">-</a>
+            <td class="product-button">  
+              <a class="btn delete" href="/admin/delete-product">x</a>
           </td>
           </tr>
-          
         <% } %>
     </table>
     
